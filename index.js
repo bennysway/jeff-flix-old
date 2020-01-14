@@ -14,7 +14,7 @@ app.use('/preview',preview)
 app.use('/cinemacity',cinemacity)
 app.use(express.static(__dirname + '/public'))
 
-const port = process.env.port || 8080
+const PORT = process.env.PORT || 8080
 
 app.get('/cinemas', function (req, res) {
     const tmpl = jsrender.templates('./public/html/cinemas.html');
@@ -37,4 +37,4 @@ app.get('/bookings', function (req, res) {
     res.send(html)
 })
 
-app.listen(port, () => console.log(`listening on port ${port}`))
+app.listen(PORT, () => console.log(`listening on port ${PORT}`))
