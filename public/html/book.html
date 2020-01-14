@@ -21,15 +21,74 @@
         <div id="header"></div>
     </header>
     <main>
-        <div class="space"></div>
-        {{if found}}
-            <h1>Book with</h1>
-            <a href="/cinemacity?movieURL={{:data.url}}">
-                <img src="cinema-city.jpg" style="width: 300px;"/>
-            </a>
-        {{else}}
-            <h1>Failed</h1>
-        {{/if}}
+        <div class="tab-content">
+            <div style="width: 50%;  float: left; ">
+                <div class="book-box">
+                    <div class="custom-select" style="width:200px;">
+                        <select>
+                            <option value="0">Choose city</option>
+                            {{for cities}}
+                            <option value="{{:value}}">{{:city}}</option>
+                            {{/for}}
+                        </select>
+                    </div>
+                    <br />
+                    <div class="custom-select" style="width:200px;">
+                        <select>
+                            <option value="0">Choose Week Day</option>
+                            {{for weekdays}}
+                            <option value="{{:value}}">{{:name}}</option>
+                            {{/for}}
+                        </select>
+                    </div>
+                    <br />
+                    <div class="custom-select" style="width:200px;">
+                        <select>
+                            <option value="0">Choose Time</option>
+                            {{for time}}
+                            <option value="{{:value}}">{{:name}}</option>
+                            {{/for}}
+                        </select>
+                    </div>
+                    <br />
+                    <div class="field-wrap">
+                        <label>
+                            Time:</br>
+                        </label>
+                        <input type="time" id="customTime" autocomplete="off" />
+                    </div>
+                    <br />
+                    <div class="custom-select" style="width:200px;">
+                        <select>
+                            <option value="0">Choose Ticket Type</option>
+                            {{for ticketType}}
+                            <option value="{{:value}}">{{:name}}</option>
+                            {{/for}}
+                        </select>
+                    </div>
+                    <br />
+                    <div class="custom-select" style="width:200px;">
+                        <select>
+                            <option value="0">Choose Seat</option>
+                            {{for seatRow}}
+                            <option value="{{:value}}">{{:name}}</option>
+                            {{/for}}
+                        </select>
+                    </div>
+                    <br />
+                    <div class="field-wrap">
+                        <label>
+                            Seat Number:</br>
+                        </label>
+                        <input type="number" id="seatNumber" autocomplete="off" />
+                    </div>
+                </div>
+            </div>
+            <div id="list" style="width: 50%; height: 400px; float: right;">
+                Test 2
+            </div>
+
+        </div>
     </main>
     <footer>
         <div id="footer"></div>
