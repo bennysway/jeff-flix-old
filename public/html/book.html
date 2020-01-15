@@ -43,7 +43,7 @@
                     </div>
                     <br />
                     <div class="custom-select" style="width:200px;">
-                        <select>
+                        <select id="timeSelect">
                             <option value="0">Choose Time</option>
                             {{for time}}
                             <option value="{{:value}}">{{:name}}</option>
@@ -68,7 +68,7 @@
                     </div>
                     <br />
                     <div class="custom-select" style="width:200px;">
-                        <select>
+                        <select id="seatSelect">
                             <option value="0">Choose Seat</option>
                             {{for seatRow}}
                             <option value="{{:value}}">{{:name}}</option>
@@ -85,7 +85,9 @@
                 </div>
             </div>
             <div id="list" style="width: 50%; height: 400px; float: right;">
-                Test 2
+                Book
+                <h1>{{:movieName}}</h1>
+                Now!
             </div>
 
         </div>
@@ -96,6 +98,7 @@
 </body>
 <js>
     <script src="js/book.js"></script>
+    <script src="js/bookinglistener.js"></script>
 </js>
 
 </html>

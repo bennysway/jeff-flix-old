@@ -62,5 +62,5 @@ input {
 }
 
 input:focus {
-    width: 35%;
+    width: 200px;
 }
