@@ -238,6 +238,7 @@ const seatRow = [
 ]
 
 router.get('/', function (req, res) {
+    var movieId = req.query.id
     const tmpl = jsrender.templates('./public/html/book.html');
     const html = tmpl.render({
         cities: cities,

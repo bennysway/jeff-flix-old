@@ -7,10 +7,6 @@ let url2 = "https://api.themoviedb.org/3/discover/movie?api_key=d4c2d2239d0577b9
 let settings = { method: "Get" };
 
 router.get('/', function (req, res) {
-    let results = {
-        moviesArray1: {},
-        moviesArray2: {}
-    }
     fetch(url1, settings)
         .then(res => res.json())
         .then((moviesArray1) => {
@@ -28,6 +24,7 @@ router.get('/', function (req, res) {
         .catch(() => {
             const tmpl = jsrender.templates('./public/html/error.html');
             const html = tmpl.render({})
+            res.cookie('bias','ikoko')
             res.send(html)
         })
 })

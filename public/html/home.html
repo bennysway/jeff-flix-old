@@ -34,8 +34,8 @@
                 <p id="showcaseLanguage">{{:moviesArray1[0].original_language}}</p>
                 <a id="showcasePreview" href="/preview?id={{:moviesArray1[0].id}}"
                     class="btn btn-white btn-animate">Preview </a>
-                <a id="showcaseBook" class="btn btn-white btn-animate">Book </a>
-                <a id="showcaseYoutube" href="https://www.youtube.com/results?search_query={{:moviesArray1[0].original_title}}"
+                    <a id="showcaseBook"  href="/book?id={{:moviesArray1[0].id}}"
+                    class="btn btn-white btn-animate">Book </a>                <a id="showcaseYoutube" href="https://www.youtube.com/results?search_query={{:moviesArray1[0].original_title}}"
                 class="btn btn-white btn-animate">Trailer </a>
                 <a id="showcaseWishList" class="btn btn-white btn-animate">Wish List</a>
             </div>
@@ -82,7 +82,8 @@
                 <p id="showcaseLanguage">{{:moviesArray2[0].original_language}}</p>
                 <a id="showcasePreview"  href="/preview?id={{:moviesArray2[0].id}}"
                 class="btn btn-white btn-animate">Preview </a>
-                <a id="showcaseBook" class="btn btn-white btn-animate">Book </a>
+                <a id="showcaseBook"  href="/book?id={{:moviesArray2[0].id}}"
+                class="btn btn-white btn-animate">Book </a>
                 <a id="showcaseYoutube" href="https://www.youtube.com/results?search_query={{:moviesArray2[0].original_title}}"
                  class="btn btn-white btn-animate">Trailer </a>
                 <a id="showcaseWishList" class="btn btn-white btn-animate">Wish List</a>
@@ -105,7 +106,7 @@
         </div>
         <h3>New Local Content</h3>
         <div id="localReleasesContainer" class="scrolling-wrapper">
-            {{for moviesArray1 start=11 end=20}}
+            {{for moviesArray2 start=11 end=20}}
             <a href="/preview?id={{:id}}">
                 <div class="card">
                     <img src="https://image.tmdb.org/t/p/w342{{:poster_path}}" alt="test image"
