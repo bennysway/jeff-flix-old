@@ -149,28 +149,27 @@ const cities = [
 const weekdays = [
     {
         "name": "Sunday",
-        "value": 1
+        "value": 7
     }, {
         "name": "Monday",
-        "value": 2
+        "value": 1
     }, {
         "name": "Tuesday",
-        "value": 3
+        "value": 2
     }, {
         "name": "Wednesday",
-        "value": 4
+        "value": 3
     }, {
         "name": "Thursday",
-        "value": 5
+        "value": 4
     }, {
         "name": "Friday",
-        "value": 6
+        "value": 5
     }, {
         "name": "Saturday",
-        "value": 7
+        "value": 6
     }
 ]
-
 const time = [
     {
         "name": "Morning",
@@ -195,7 +194,6 @@ const time = [
         "value": 7
     }
 ]
-
 const ticketType = [
     {
         "name": "Normal",
@@ -214,7 +212,6 @@ const ticketType = [
         "value": 5
     }
 ]
-
 const seatRow = [
     {
         "name": "Front Row",
@@ -226,7 +223,7 @@ const seatRow = [
         "name": "Mid",
         "value": 3
     },{
-        "name": "Last Quater",
+        "name": "Premium",
         "value": 4
     },{
         "name": "Back Row",

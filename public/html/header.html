@@ -7,13 +7,25 @@
     <a href="/wishlist">Wish List</a>
     <input type="search" id="customSearch" placeholder="Search" autocomplete="on" />
     <div class="usernav">
-        <div class="dropdown">
-            <a href="/account">Account</a>
-            <div class="dropdown-content">
-                <a href="login">Login</a>
-                <a href="signup">Sign Up</a>
+        <script id="userControl" type="text/x-jsrender">
+            <div class="dropdown">
+                {{if user.isLoggedIn}}
+                <a href="/account">{{:user.name}}</a>
+                <div class="dropdown-content">
+                    <a href="login">Log out</a>
+                </div>
+                {{else}}
+                <a href="/account">Account</a>
+                <div class="dropdown-content">
+                    <a href="login">Login</a>
+                    <a href="signup">Sign Up</a>
+                </div>
+                {{/if}}
+
+
             </div>
-        </div>
+        </script>
+        
         <div class="dropdown">
             <a href="#">Language</a>
             <div class=" dropdown-content">

@@ -1,17 +1,23 @@
 let bookingData = {
-    city: "",
-    time: "",
-    date: "",
+    city: 0,
+    time: "null",
+    date: 0,
     movieID: 0,
+    seatRow:0,
     seatNumber: 0,
-    movieName: "",
+    movieName: "null",
     ticketType: 0,
     ticketAmount: 0,   
 }
 function onSelectCity() {
     let select = document.getElementById('selectCity')
-    let value = select.options[select.selectedIndex].innerHTML
+    let value = select.options[select.selectedIndex].value
     updateCity(value)
+}
+function onSelectDay() {
+    let select = document.getElementById('selectDay')
+    let value = select.options[select.selectedIndex].value
+    updateDate(value)
 }
 function onSelectTime() {
     let x = document.getElementById("selectTime").value
@@ -45,44 +51,48 @@ function onSelectTime() {
             updateTime("12:00:00")
             break
         default:
-            alert(x)
+            updateTime("12:00:00")
             break;
     }
 }
-
+function onSelectTickeType() {
+    let select = document.getElementById('selectTicketType')
+    let value = select.options[select.selectedIndex].value
+    updateTicketType(value)
+}
 function onSelectSeat() {
     let select = document.getElementById('selectSeat')
-    let value = select.selectedIndex
+    let value = select.options[select.selectedIndex].value
     updateSeat(value)
 }
-function onSelectTickeType(){
-    let select = document.getElementById('selectTicketType')
-    let value = select.options[select.selectedIndex].innerHTML
-    updateTicketType(value)
-}
+
 function onSelectSeatRow(){
-    let select = document.getElementById('selectTicketType')
-    let value = select.options[select.selectedIndex].innerHTML
-    updateTicketType(value)
+    let select = document.getElementById('selectSeat')
+    let value = select.options[select.selectedIndex].value
+
+    updateTicketRow(value)
 }
-function onSelectDay(){
-    let select = document.getElementById('selectDay')
-    let value = select.selectedIndex
-    updateDate(value)
+
+function onInputSeatNumber() {
+    let input = document.getElementById('inputSeatNumber')
+    let value = input.value
+
+    updateSeatNumber(value)
 }
+
 
 
 function updateTime(time) {
     bookingData.time = time
 }
-function updateSeat() {
-    bookingData.seat
+function updateSeatNumber() {
+    bookingData.seatNumber
 }
 function updateCity(city) {
     bookingData.city = city
 }
 function updateDate(date) {
-
+    bookingData.date = date
 }
 function updateTicketType(type) {
     bookingData.ticketType = type
@@ -90,14 +100,21 @@ function updateTicketType(type) {
 function updateTicketAmount(amount) {
     bookingData.ticketAmount = amount
 }
+function updateTicketRow(row) {
+    bookingData.seatRow = row
+}
 
 function book() {
-    alert(bookingData.city+';'+
-    bookingData.date+';'+
-    bookingData.time    +';'+
-    bookingData.ticketType+';'+
-    bookingData.ticketAmount+';'+
-    bookingData.seatNumber+';'+
-    bookingData.movieName+';'
-    )
+    let cookieString = getCookie("bookings")
+    if (cookieString != "") {
+        let allBookings = JSON.parse(getCookie("bookings"))
+        allBookings.push(bookingData)
+        setCookie("bookings", JSON.stringify(allBookings), 13)
+    } else {
+        let allBookings = []
+        console.log("Empty cookie")
+        allBookings.push(bookingData)
+        setCookie("bookings", JSON.stringify(allBookings), 13) 
+    }
+    return "booked"
 }
