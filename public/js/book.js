@@ -1,13 +1,13 @@
-var x, i, j, selElmnt, a, b, c;
+var x, cusIndex, j, selElmnt, a, b, c;
 /* Look for any elements with the class "custom-select": */
 x = document.getElementsByClassName("custom-select");
-for (i = 0; i < x.length; i++) {
-  selElmnt = x[i].getElementsByTagName("select")[0];
+for (cusIndex = 0; cusIndex < x.length; cusIndex++) {
+  selElmnt = x[cusIndex].getElementsByTagName("select")[0];
   /* For each element, create a new DIV that will act as the selected item: */
   a = document.createElement("DIV");
   a.setAttribute("class", "select-selected");
   a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-  x[i].appendChild(a);
+  x[cusIndex].appendChild(a);
   /* For each element, create a new DIV that will contain the option list: */
   b = document.createElement("DIV");
   b.setAttribute("class", "select-items select-hide");
@@ -25,6 +25,7 @@ for (i = 0; i < x.length; i++) {
         for (i = 0; i < s.length; i++) {
           if (s.options[i].innerHTML == this.innerHTML) {
               s.selectedIndex = i;
+              s.onchange()
             h.innerHTML = this.innerHTML;
             y = this.parentNode.getElementsByClassName("same-as-selected");
             for (k = 0; k < y.length; k++) {
@@ -38,7 +39,7 @@ for (i = 0; i < x.length; i++) {
     });
     b.appendChild(c);
   }
-  x[i].appendChild(b);
+  x[cusIndex].appendChild(b);
   a.addEventListener("click", function(e) {
     /* When the select box is clicked, close any other select boxes,
     and open/close the current select box: */

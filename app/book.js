@@ -192,7 +192,7 @@ const time = [
         "value": 6
     },{
         "name": "Custom",
-        "value": -1
+        "value": 7
     }
 ]
 
@@ -218,22 +218,22 @@ const ticketType = [
 const seatRow = [
     {
         "name": "Front Row",
-        "value": 5
+        "value": 1
     },{
         "name": "First Quarter",
-        "value": 5
+        "value": 2
     },{
         "name": "Mid",
-        "value": 5
+        "value": 3
     },{
         "name": "Last Quater",
-        "value": 5
+        "value": 4
     },{
         "name": "Back Row",
         "value": 5
     },{
         "name": "Custom",
-        "value": -1
+        "value": 6
     }
 ]
 
