@@ -3,9 +3,11 @@
     "",
     "\\app",
     "\\public",
+    "\\public\\css",
     "\\public\\html",
+    "\\public\\html\\components",
     "\\public\\js"
   ],
-  "SelectedNode": "\\public\\html\\cinemacitycity.html",
+  "SelectedNode": "\\public\\js\\header.js",
   "PreviewInSolutionExplorer": false
 }

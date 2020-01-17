@@ -3,29 +3,16 @@
         <img src="jfLogo.png" alt="logo" />
     </a>
     <a href="/">Home</a>
-    <a href="/bookings">My Bookings</a>
-    <a href="/wishlist">Wish List</a>
+    <a href="/bookings">My Bookings</a>   
     <input type="search" id="customSearch" placeholder="Search" autocomplete="on" />
     <div class="usernav">
-        <script id="userControl" type="text/x-jsrender">
-            <div class="dropdown">
-                {{if user.isLoggedIn}}
-                <a href="/account">{{:user.name}}</a>
-                <div class="dropdown-content">
-                    <a href="login">Log out</a>
-                </div>
-                {{else}}
-                <a href="/account">Account</a>
-                <div class="dropdown-content">
-                    <a href="login">Login</a>
-                    <a href="signup">Sign Up</a>
-                </div>
-                {{/if}}
-
-
+        <div class="dropdown">
+            <a href="/account">Account</a>
+            <div class="dropdown-content">
+                <a href="login">Login</a>
+                <a href="signup">Sign Up</a>
             </div>
-        </script>
-        
+        </div>
         <div class="dropdown">
             <a href="#">Language</a>
             <div class=" dropdown-content">

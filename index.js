@@ -5,10 +5,12 @@ const app = express()
 
 var book = require('./app/book')
 var home = require('./app/home')
+var main = require('./app/main')
 var search = require('./app/search')
 var preview = require('./app/preview')
 var wishlist = require('./app/wishlist')
 var cinemacity = require('./app/citycinemacity')
+
 
 app.use('/',home)
 app.use('/book',book)
@@ -35,5 +37,4 @@ app.get('/bookings', function (req, res) {
     const html = tmpl.render()
     res.send(html)
 })
-
 app.listen(PORT, () => console.log(`listening on port ${PORT}`))
